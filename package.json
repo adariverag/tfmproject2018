@@ -1,0 +1,21 @@
+{
+  "name": "tfmproject2018_2",
+  "version": "1.0.0",
+  "description": "Trabajo de Fin de Master",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adariverag/tfmproject2018.git"
+  },
+  "author": "Ada Luz Rivera Garmendia",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "socket.io": "^2.1.1",
+    "static": "^2.0.0"
+  }
+}

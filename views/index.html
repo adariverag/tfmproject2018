@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/images/favicon.ico" />
+    <title>ADA WebRTC App</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <article>
+        <section id="inicio">
+            <div>
+                <form>
+                    <h1>WebRTC App</h1>
+                    <p>Aplicaci&oacute;n para hacer videollamadas y chat de texto en grupo, para un m&aacute;ximo de 4 usuarios.</p>
+                    <div>
+                        <i class="fas fa-users"></i>
+                        <input type="text" id="txt-nombre-sala" value="" autocomplete="off" placeholder="Nombre de la sala" />
+                        <p id="p-nombre-sala-error">Debe escribir el nombre de la sala</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="txt-nombre-usuario" value="" autocomplete="off" placeholder="Nombre del usuario" />
+                        <p id="p-nombre-usuario-error">Debe escribir el nombre del usuario</p>
+                    </div>
+                    <button id="btn-conectar">Conectar</button>
+                    <p class="hide" id="msj-sala-llena">Lo sentimos, la sala está llena...</p>
+                    <p class="hide" id="msj-usuario-existe">Lo sentimos, ya existe otro usuario con el mismo nombre en la sala...</p>
+                </form>
+            </div>
+        </section>
+        <section id="principal" class="hide">
+            <header>
+                <h1>WebRTC</h1>
+                <ul>
+                    <li id="li-nombre-usuario">
+                        <i class="fas fa-user"></i> Usuario
+                    </li>
+                    <li id="li-nombre-sala">
+                        <i class="fas fa-users"></i>Sala
+                    </li>
+                    <li id="li-desconectar">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </li>
+                </ul>
+            </header>
+            <i id="mostrar-lista-movil" class="fas fa-chevron-circle-left"></i>
+            <div id="contenedor-videos">
+                <video autoplay id="video-local" src=""></video>
+                <div id="contenedor-botones-video">
+                    <div id="btn-video-control">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div id="btn-audio-control">
+                        <i class="fas fa-microphone-slash"></i>
+                    </div>
+                    <div id="btn-colgar"></div>
+                </div>
+            </div>
+            <div id="contenedor-chat">
+                <h1>Mensajes<span>_</span></h1>
+                <ul id="lista-mensajes"></ul>
+                <div id="contenedor-controles-chat">
+                    <textarea id="txt-mensaje-enviar"></textarea>
+                    <div id="btn-enviar">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="contenedor-usuarios-conectados">
+                <h1>
+                    Usuarios Conectados
+                    <input type="file" id="selector-archivos" />
+                    <i class="fa fa-share-alt" aria-hidden="true" id="share-todos"></i>
+                </h1>
+                <ul id="lista-usuarios-conectados"></ul>
+            </div>
+        </section>
+    </article>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/main.js" type="module"></script>
+</body>
+
+</html>
